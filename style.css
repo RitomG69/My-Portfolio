@@ -60,6 +60,14 @@ canvas {
     line-height: 1.5;
     margin-bottom: var(--spacing);
   }
+section a{
+    padding: .5rem;
+    background: var(--dark-bg);
+    font-size: 1.50rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+    color: yellow
+}
 
   blockquote {
     margin: 0;

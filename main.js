@@ -63,13 +63,20 @@ Array(200).fill().forEach(addStar);
 const spaceTexture = new THREE.TextureLoader().load('space.jpg');
 scene.background = spaceTexture;
 
-// Avatar
+//Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('jeff.png');
+var mat = [
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('MyImage1.jpg') }),
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('MyImage2.jpg') }),
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('MyImage3.jpg') }),
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('MyImage4.jpg') }),
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('MyImage5.jpg') }),
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('MyImage6.jpg') })
+];
 
-const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
+const ritom = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), mat);
 
-scene.add(jeff);
+scene.add(ritom);
 
 // Moon
 
@@ -89,8 +96,8 @@ scene.add(moon);
 moon.position.z = 30;
 moon.position.setX(-10);
 
-jeff.position.z = -5;
-jeff.position.x = 2;
+ritom.position.z = -5;
+ritom.position.x = 2;
 
 // Scroll Animation
 
@@ -100,8 +107,8 @@ function moveCamera() {
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
 
-  jeff.rotation.y += 0.01;
-  jeff.rotation.z += 0.01;
+  ritom.rotation.y += 0.01;
+  ritom.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
@@ -122,6 +129,8 @@ function animate() {
 
   moon.rotation.x += 0.005;
 
+    ritom.rotation.x += 0.005;
+    ritom.rotation.y += 0.002;
   // controls.update();
 
   renderer.render(scene, camera);
