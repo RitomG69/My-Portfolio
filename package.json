@@ -1,7 +1,9 @@
 {
   "name": "three-demo",
+  "homepage": "https://ritomg69.github.io/My-Portfolio/",
   "version": "0.0.0",
   "scripts": {
+    "predeploy": "npm run build",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
